@@ -8,6 +8,18 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var friends: [Friend] = [
+        Friend(name: "Kate", birthday: Self.createDate(year: 1964, month: 7, day: 15)),
+        Friend(name: "Joe", birthday: Self.createDate(year: 1964, month: 1, day: 18)),
+        Friend(name: "Orko", birthday: Self.createDate(year: 2018, month: 6, day: 20)),
+        Friend(name: "Molly", birthday: Self.createDate(year: 2023, month: 8, day: 10)),
+        Friend(name: "Rachel", birthday: Self.createDate(year: 2017, month: 3, day: 16)),
+        Friend(name: "Caitlin", birthday: Self.createDate(year: 1987, month: 9, day: 25)),
+        Friend(name: "Brenton", birthday: Self.createDate(year: 2008, month: 10, day: 7)),
+        Friend(name: "Logan", birthday: Self.createDate(year: 2012, month: 12, day: 9)),
+        Friend(name: "Declan", birthday: Self.createDate(year: 2017, month: 4, day: 18))
+    ]
+
     var body: some View {
         VStack {
             Image(systemName: "globe")
@@ -17,6 +29,24 @@ struct ContentView: View {
         }
         .padding()
     }
+
+    // MARK: - Private Functions
+    private static func createDate(year: Int, month: Int, day: Int) -> Date {
+        var components = DateComponents()
+        components.year = year
+        components.month = month
+        components.day = day
+        let calendar = Calendar.current
+        return calendar.date(from: components) ?? Date()
+    }
+
+    private func formatDate(_ date: Date) -> String {
+        let formatter = DateFormatter()
+        formatter.dateStyle = .medium
+        formatter.timeStyle = .none
+        return formatter.string(from: date)
+    }
+
 }
 
 // MARK: - Previews
