@@ -21,13 +21,17 @@ struct ContentView: View {
     ]
 
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        NavigationStack {
+            List(friends, id: \.name) { friend in
+                HStack {
+                    Text(friend.name)
+                    Spacer()
+                    Text("\(formatDate(friend.birthday))")
+                }
+            }
+             .navigationTitle("Birthdays")
         }
-        .padding()
+
     }
 
     // MARK: - Private Functions
