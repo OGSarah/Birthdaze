@@ -5,20 +5,18 @@
 //  Created by Sarah Clark on 8/20/25.
 //
 
+import SwiftData
 import SwiftUI
 
 struct ContentView: View {
-    @State private var friends: [Friend] = [
+
+    /*@State private var friends: [Friend] = [
         Friend(name: "Kate", birthday: Self.createDate(year: 1964, month: 7, day: 15)),
-        Friend(name: "Joe", birthday: Self.createDate(year: 1964, month: 1, day: 18)),
-        Friend(name: "Orko", birthday: Self.createDate(year: 2018, month: 6, day: 20)),
-        Friend(name: "Molly", birthday: Self.createDate(year: 2023, month: 8, day: 10)),
-        Friend(name: "Rachel", birthday: Self.createDate(year: 2017, month: 3, day: 16)),
-        Friend(name: "Caitlin", birthday: Self.createDate(year: 1987, month: 9, day: 25)),
-        Friend(name: "Brenton", birthday: Self.createDate(year: 2008, month: 10, day: 7)),
-        Friend(name: "Logan", birthday: Self.createDate(year: 2012, month: 12, day: 9)),
-        Friend(name: "Declan", birthday: Self.createDate(year: 2017, month: 4, day: 18))
-    ]
+        
+    ]*/
+
+    @Query private var friends: [Friend]
+    @Environment(\.modelContext) private var context
 
     @State private var newName = ""
     @State private var newDate = Date.now
@@ -43,7 +41,7 @@ struct ContentView: View {
                     }
                     Button("Save") {
                         let newFriend = Friend(name: newName, birthday: newDate)
-                        friends.append(newFriend)
+                        context.insert(newFriend)
 
                         newName = ""
                         newDate = .now
@@ -55,6 +53,17 @@ struct ContentView: View {
                 }
                 .padding()
                 .background(.bar)
+             }
+             .task {
+                context.insert(Friend(name: "Kate", birthday: Self.createDate(year: 1964, month: 7, day: 15)))
+                context.insert(Friend(name: "Joe", birthday: Self.createDate(year: 1964, month: 1, day: 18)))
+                context.insert(Friend(name: "Orko", birthday: Self.createDate(year: 2018, month: 6, day: 20)))
+                context.insert(Friend(name: "Molly", birthday: Self.createDate(year: 2023, month: 8, day: 10)))
+                context.insert(Friend(name: "Rachel", birthday: Self.createDate(year: 2017, month: 3, day: 16)))
+                context.insert(Friend(name: "Caitlin", birthday: Self.createDate(year: 1987, month: 9, day: 25)))
+                context.insert(Friend(name: "Brenton", birthday: Self.createDate(year: 2008, month: 10, day: 7)))
+                context.insert(Friend(name: "Logan", birthday: Self.createDate(year: 2012, month: 12, day: 9)))
+                context.insert(Friend(name: "Declan", birthday: Self.createDate(year: 2017, month: 4, day: 18)))
              }
         }
 
@@ -82,10 +91,12 @@ struct ContentView: View {
 // MARK: - Previews
 #Preview("Dark Mode") {
     ContentView()
+        .modelContainer(for: Friend.self, inMemory: true)
         .preferredColorScheme(.dark)
 }
 
 #Preview("Light Mode") {
     ContentView()
+        .modelContainer(for: Friend.self, inMemory: true)
         .preferredColorScheme(.light)
 }
