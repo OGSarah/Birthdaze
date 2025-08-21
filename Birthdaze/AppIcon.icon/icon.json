@@ -1,0 +1,104 @@
+{
+  "fill" : {
+    "linear-gradient" : [
+      "srgb:0.83742,0.83744,0.83743,1.00000",
+      "srgb:0.26052,0.26052,0.26052,1.00000"
+    ]
+  },
+  "groups" : [
+    {
+      "blend-mode-specializations" : [
+        {
+          "value" : "normal"
+        },
+        {
+          "appearance" : "dark",
+          "value" : "screen"
+        },
+        {
+          "appearance" : "tinted",
+          "value" : "screen"
+        }
+      ],
+      "blur-material-specializations" : [
+        {
+          "value" : 0.5
+        },
+        {
+          "appearance" : "tinted",
+          "value" : null
+        }
+      ],
+      "layers" : [
+        {
+          "fill" : {
+            "linear-gradient" : [
+              "srgb:0.37928,0.98240,1.00000,1.00000",
+              "srgb:0.32116,0.57047,0.31718,1.00000"
+            ]
+          },
+          "image-name" : "fireworks.png",
+          "name" : "fireworks",
+          "position" : {
+            "scale" : 2.9,
+            "translation-in-points" : [
+              2.65625,
+              -15.3984375
+            ]
+          }
+        }
+      ],
+      "position" : {
+        "scale" : 1,
+        "translation-in-points" : [
+          -0.5625,
+          9.2421875
+        ]
+      },
+      "shadow" : {
+        "kind" : "layer-color",
+        "opacity" : 0.5
+      },
+      "specular" : true,
+      "translucency" : {
+        "enabled" : true,
+        "value" : 0.5
+      }
+    },
+    {
+      "blend-mode" : "normal",
+      "layers" : [
+        {
+          "fill" : {
+            "solid" : "srgb:0.91251,0.64190,0.91684,1.00000"
+          },
+          "glass" : false,
+          "hidden" : false,
+          "image-name" : "birthday.cake.fill.png",
+          "name" : "birthday.cake.fill",
+          "position" : {
+            "scale" : 3,
+            "translation-in-points" : [
+              2.0546875,
+              -50.109375
+            ]
+          }
+        }
+      ],
+      "shadow" : {
+        "kind" : "layer-color",
+        "opacity" : 0.5
+      },
+      "translucency" : {
+        "enabled" : false,
+        "value" : 0.5
+      }
+    }
+  ],
+  "supported-platforms" : {
+    "circles" : [
+      "watchOS"
+    ],
+    "squares" : "shared"
+  }
+}

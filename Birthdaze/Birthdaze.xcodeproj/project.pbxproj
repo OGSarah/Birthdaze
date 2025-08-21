@@ -6,8 +6,13 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		26401B682E56D9F700A8EFAB /* AppIcon.icon in Resources */ = {isa = PBXBuildFile; fileRef = 26401B672E56D9F700A8EFAB /* AppIcon.icon */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		264018CB2E56D50D00A8EFAB /* Birthdaze.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Birthdaze.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		26401B672E56D9F700A8EFAB /* AppIcon.icon */ = {isa = PBXFileReference; lastKnownFileType = folder.iconcomposer.icon; path = AppIcon.icon; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -34,6 +39,7 @@
 			children = (
 				264018CD2E56D50D00A8EFAB /* Birthdaze */,
 				264018CC2E56D50D00A8EFAB /* Products */,
+				26401B672E56D9F700A8EFAB /* AppIcon.icon */,
 			);
 			sourceTree = "<group>";
 		};
@@ -110,6 +116,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				26401B682E56D9F700A8EFAB /* AppIcon.icon in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -274,6 +281,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = P92GSKWU9W;
@@ -307,6 +315,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = P92GSKWU9W;
