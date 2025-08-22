@@ -10,11 +10,6 @@ import SwiftUI
 
 struct ContentView: View {
 
-    /*@State private var friends: [Friend] = [
-        Friend(name: "Kate", birthday: Self.createDate(year: 1964, month: 7, day: 15)),
-        
-    ]*/
-
     @Query(sort: \Friend.birthday) private var friends: [Friend]
     @Environment(\.modelContext) private var context
 
