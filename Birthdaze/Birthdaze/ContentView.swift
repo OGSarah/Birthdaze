@@ -15,7 +15,7 @@ struct ContentView: View {
         
     ]*/
 
-    @Query private var friends: [Friend]
+    @Query(sort: \Friend.birthday) private var friends: [Friend]
     @Environment(\.modelContext) private var context
 
     @State private var newName = ""
@@ -23,9 +23,20 @@ struct ContentView: View {
 
     var body: some View {
         NavigationStack {
-            List(friends, id: \.name) { friend in
+            List(friends) { friend in
                 HStack {
+                    if friend.isBirthdayToday {
+                        Image(systemName: "birthday.cake.fill")
+                            .foregroundStyle(
+                                LinearGradient(
+                                    gradient: Gradient(colors: [.pink, .purple, .blue]),
+                                    startPoint: .topLeading,
+                                    endPoint: .bottomTrailing
+                                )
+                            )
+                    }
                     Text(friend.name)
+                        .bold(friend.isBirthdayToday)
                     Spacer()
                     Text("\(formatDate(friend.birthday))")
                 }
@@ -54,7 +65,7 @@ struct ContentView: View {
                 .padding()
                 .background(.bar)
              }
-             .task {
+             /*.task {
                 context.insert(Friend(name: "Kate", birthday: Self.createDate(year: 1964, month: 7, day: 15)))
                 context.insert(Friend(name: "Joe", birthday: Self.createDate(year: 1964, month: 1, day: 18)))
                 context.insert(Friend(name: "Orko", birthday: Self.createDate(year: 2018, month: 6, day: 20)))
@@ -64,7 +75,7 @@ struct ContentView: View {
                 context.insert(Friend(name: "Brenton", birthday: Self.createDate(year: 2008, month: 10, day: 7)))
                 context.insert(Friend(name: "Logan", birthday: Self.createDate(year: 2012, month: 12, day: 9)))
                 context.insert(Friend(name: "Declan", birthday: Self.createDate(year: 2017, month: 4, day: 18)))
-             }
+             }*/
         }
 
     }
